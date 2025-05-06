@@ -2,16 +2,17 @@ import cv2
 import numpy as np
 import math
 
+
 def add_salt_and_pepper(img, amount=0.1):
     noisy = img.copy()
     total_pixels = img.shape[0] * img.shape[1]
 
-    # Salt
+    # Salt noise
     num_salt = int(amount * total_pixels / 2)
     coords = [np.random.randint(0, i - 1, num_salt) for i in img.shape[:2]]
     noisy[coords[0], coords[1]] = 255
 
-    # Pepper
+    # Pepper noise
     num_pepper = int(amount * total_pixels / 2)
     coords = [np.random.randint(0, i - 1, num_pepper) for i in img.shape[:2]]
     noisy[coords[0], coords[1]] = 0
