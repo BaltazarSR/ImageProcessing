@@ -20,7 +20,7 @@ gaussian_filter = np.array([[
     np.power(math.e, -4), 
     np.power(math.e, -2), 
     np.power(math.e, -4)
-]]) * (2/math.pi)
+]]) * (2 / math.pi)
 
 img = cv2.imread('Assets/van-gogh.jpg')
 

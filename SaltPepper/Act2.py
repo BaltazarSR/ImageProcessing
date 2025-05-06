@@ -39,7 +39,7 @@ gaussian_filter = np.array([[
     np.power(math.e, -4), 
     np.power(math.e, -2), 
     np.power(math.e, -4)
-]]) * (2/math.pi)
+]]) * (2 / math.pi)
 
 avfiltered_img = cv2.filter2D(img, ddepth=-1, kernel=av_filter)
 gaussianfiltered_img = cv2.filter2D(img, ddepth=-1, kernel=gaussian_filter)
