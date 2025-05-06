@@ -22,13 +22,17 @@ img = cv2.imread('Assets/camera.jpg')
 noisy_img = add_salt_and_pepper(img)
 
 
-av_filter = np.array([[1, 1, 1],
-                      [1, 1, 1],
-                      [1, 1, 1]]) / 9
+av_filter = np.array([
+            [1, 1, 1],
+            [1, 1, 1],
+            [1, 1, 1]
+            ]) / 9
 
-gaussian_filter = np.array([[np.power(math.e, -4), np.power(math.e, -2), np.power(math.e, -4)],
-                            [np.power(math.e, -2), 1, np.power(math.e, -2)],
-                            [np.power(math.e, -4), np.power(math.e, -2), np.power(math.e, -4)]]) * (2/math.pi)
+gaussian_filter = np.array([
+            [np.power(math.e, -4), np.power(math.e, -2), np.power(math.e, -4)],
+            [np.power(math.e, -2), 1, np.power(math.e, -2)],
+            [np.power(math.e, -4), np.power(math.e, -2), np.power(math.e, -4)]
+            ]) * (2/math.pi)
 
 avfiltered_img = cv2.filter2D(img, ddepth=-1, kernel=av_filter)
 gaussianfiltered_img = cv2.filter2D(img, ddepth=-1, kernel=gaussian_filter)

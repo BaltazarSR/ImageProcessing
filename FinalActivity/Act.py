@@ -30,7 +30,6 @@ for y in range(blurred.shape[0]):
             mask2[y, x] = 255
 
 # OCR
-
 reader = easyocr.Reader(['en'])
 results = reader.readtext(mask2)
 
@@ -48,6 +47,5 @@ cv2.imshow("Original", original)
 cv2.imshow("Mask", mask)
 cv2.imshow("Gaussian", blurred)
 cv2.imshow("Mask2", mask2)
-# cv2.imshow("OCR Output", original)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

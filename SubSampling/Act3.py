@@ -2,13 +2,17 @@ import cv2
 import numpy as np
 import math
 
-av_filter = np.array([[1, 1, 1],
-                      [1, 1, 1],
-                      [1, 1, 1]]) / 9
+av_filter = np.array([
+            [1, 1, 1],
+            [1, 1, 1],
+            [1, 1, 1]
+            ]) / 9
 
-gaussian_filter = np.array([[np.power(math.e, -4), np.power(math.e, -2), np.power(math.e, -4)],
-                            [np.power(math.e, -2), 1, np.power(math.e, -2)],
-                            [np.power(math.e, -4), np.power(math.e, -2), np.power(math.e, -4)]]) * (2/math.pi)
+gaussian_filter = np.array([
+            [np.power(math.e, -4), np.power(math.e, -2), np.power(math.e, -4)],
+            [np.power(math.e, -2), 1, np.power(math.e, -2)],
+            [np.power(math.e, -4), np.power(math.e, -2), np.power(math.e, -4)]
+            ]) * (2/math.pi)
 
 img = cv2.imread('Assets/van-gogh.jpg')
 
